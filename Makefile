@@ -9,8 +9,8 @@ run: ## Run the application
 		--mount type=bind,src=$(CURRENT_DIR)/,dst=/app/ \
 		-e "ENV=dev" \
 		-e "LOG_LEVEL=info" \
-		node:8.10 \
-		node /app/src/index.js
+		node:14.18.1 \
+		npm start --prefix /app
 
 .PHONY: test
 test: ## Run unit tests
@@ -19,7 +19,7 @@ test: ## Run unit tests
 		-w="/app" \
 		-e "ENV=dev" \
 		-e "LOG_LEVEL=fatal" \
-		node:8.10 \
+		node:14.18.1 \
 		npm test
 
 .PHONY: help

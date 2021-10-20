@@ -1,32 +1,28 @@
-## Node.js code challenge for engineering applicants - Team Points Project
+# My Companio Node.js code challenge - Team Points Project
 
-The purpose of this project is to give you an opportunity to showcase your
-coding style with node.js.
+## What changed?
 
-This is not meant to take longer than the typical 30 min code interview.
+- Updated Node from **8.10** to **14.18.1**
+- Converted everything to TypeScript and used [ts-auto-guard](https://github.com/rhys-vdw/ts-auto-guard) to have a runtime type checking `isPlayer` in `calculateTeamPoints.ts` in case bad data comes from our request
+- Fixed the team points order to be descending instead of ascending in `calculateTeamPoints.ts` and changed the tests accordingly in `calculateTeamPoints.test.ts`
+- Mocked the api call receiving nightly team points in `index.ts` (couldn't pass bad data because of TypeScript, it needs to be improved as right now we can't test the runtime type checking `isPlayer`)
 
-You can use any tools (IDE, npm, ...) and resources (google, stackoverflow,...) you use in your day to day.   
-However, _you_ should come up with the implementation on your own.
+## Usage
 
-## Overview
-
-Every night we receive list of players with their: name, team, status, and points for the day.  
-We need a function that aggregates points by team, and sorts teams in descending order by total points.  
-Only active players should be considered for team points calculation.
-
-## Requirements
-
-* Code must be written using `standardjs` convention
-
-* Code should run in `Node 14.18.1`
-
-## Submitting the project
- * Clone this repo
- * Implement a working solution for `calculateTeamPoints`
- * Create a secret gist with the code for:
-    * `calculateTeamPoints.js`
-    * `calculateTeamPoints.test.js`
- * Submit the gist link to your PGA contact
- * Adding a README file for repo is mandatory and README should have steps to run code.
- * Only Javascript code will checked in code review. We are not concern about HTML styling.
- * You have to submit assignment within 3 days after you receive email for assignment.
+To get started clone the repo
+```
+git clone https://github.com/alex-j-b/nodejs-assignment.git
+cd nodejs-assignment
+```
+install dependencies
+```
+npm i
+```
+and run
+```
+make run
+```
+for the tests
+```
+make test
+```
